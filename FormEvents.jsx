@@ -3,21 +3,30 @@ import React, { useState } from "react";
 
 
 const Input = () => {
-const [userName, setuserName]=useState( )
+const [userName, setuserName]=useState( '')
+const [show, setshow]=useState( )
 
-const updateInput=( event)=>{
-    setuserName(event.target.value)
+const details =( changes)=>{
+    setuserName(changes.target.value)
+}
+
+const Onclick=()=>{
+setshow(userName)
 }
 
     return (
         <section className='top' >
+            
         <div className="inputtext">
-            <input type="text" placeholder="Enter your text" onChange={updateInput} />
+            <h1>{show}</h1>
+            <input type="text" placeholder="Enter your text" onChange={details}/>
             <br />
-            <button>Submit</button>
-            <p> {userName} </p>
+            <button className="Submitbtn" onClick={ Onclick}>Submit</button >
+            
         </div>
+
         </section>
+        
 
     );
 }
